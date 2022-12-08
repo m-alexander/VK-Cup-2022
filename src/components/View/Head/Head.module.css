@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 8px;
+}
+
+.read {
+  width: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.readIndicator {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-icon-accent);
+}
+
+.avatarAndInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.icon {
+  display: inline-flex;
+  align-self: flex-end;
+}
+
+.date {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}
+
+.users {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}

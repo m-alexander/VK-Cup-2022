@@ -1,0 +1,176 @@
+.wrapper {
+  padding: 12px 12px 12px 0;
+  flex: 1;
+  max-height: calc(100vh - 56px);
+  overflow: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  background: var(--color-letter-list-background);
+  flex: 1;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  position: relative;
+}
+
+.item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  right: 12px;
+  height: 1px;
+  background: var(--color-separator-primary-alpha);
+}
+
+.item:hover {
+  border-radius: 12px;
+  background: var(--color-transparent-hover);
+}
+
+.itemReadStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemReadStatus::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-icon-accent);
+}
+
+.item:not(.itemRead):hover .itemReadStatus::after {
+  background: var(--color-icon-secondary);
+}
+
+.itemRead .itemReadStatus::after {
+  background: none;
+}
+
+.itemUser {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 192px;
+}
+
+.avatarWrapper {
+  display: flex;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.itemUserAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.itemUserNoAvatar {
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  color: #874dd6;
+  background: #d3b3ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemUserName {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.itemRead .itemUserName {
+  font-weight: 400;
+}
+
+.itemIcon {
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:hover .itemIcon path {
+  fill: none;
+  stroke: #a5a7ad;
+}
+
+.itemMessageAndIcons {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+}
+
+.itemMessage {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: var(--color-text-secondary);
+}
+
+.itemTitle {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-right: 8px;
+}
+
+.itemRead .itemTitle {
+  font-weight: 400;
+}
+
+.itemText {
+}
+
+.itemIcons {
+}
+
+.itemDate {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: right;
+  color: var(--color-text-secondary);
+  width: 64px;
+}

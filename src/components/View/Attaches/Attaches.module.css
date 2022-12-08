@@ -1,0 +1,76 @@
+.wrapper {
+  padding: 12px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 256px;
+  height: 190px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: var(--fade-caption);
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+
+  display: none;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 0;
+  text-decoration: none;
+}
+
+.item:hover .caption {
+  display: flex;
+}
+
+.action {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-primary);
+
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.action a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+.fileSize {
+  color: var(--color-text-secondary);
+}

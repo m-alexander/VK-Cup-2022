@@ -1,0 +1,20 @@
+.wrapper {
+  padding: 12px 12px 12px 0;
+  flex: 1;
+  max-height: calc(100vh - 56px);
+  overflow: auto;
+}
+
+.content {
+  background: var(--color-background-content);
+  color: var(--color-text-primary);
+  border-radius: 12px;
+}
+
+.notFound {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+html {
+  --color-header-background: #ffffff;
+  --elevation-header: 0 0 16px rgba(2, 13, 41, 0.12);
+  --elevation-dropdown: 0 4px 32px rgba(0, 16, 61, 0.24);
+  --color-sidebar-compose-button-background: #ffffff;
+  --color-separator-primary-alpha: rgba(0, 16, 61, 0.12);
+  --color-sidebar-compose-button-text: #333333;
+  --color-background-tertiary: #f6f7f8;
+  --color-background-content: #ffffff;
+  --color-sidebar-item-text-active: #333333;
+  --color-transparent-active: rgba(0, 16, 61, 0.08);
+  --color-transparent-hover: rgba(0, 16, 61, 0.04);
+  --color-sidebar-item-text-primary: #333333;
+  --color-letter-list-background: #ffffff;
+  --color-text-primary: #2c2d2e;
+  --color-text-secondary: #87898f;
+  --color-text-link: #005bd1;
+  --color-icon-accent: #005ff9;
+  --color-icon-secondary: #a5a7ad;
+  --color-scrollbar: rgba(0, 16, 61, 0.08);
+  --color-icon-primary: #2c2d2e;
+  --fade-caption: linear-gradient(
+    0deg,
+    rgba(236, 237, 240, 0.95) 56.81%,
+    rgba(236, 237, 240, 0) 104.46%
+  );
+
+  --color-true-white: #fff;
+  --color-border: rgba(0, 16, 61, 0.12);
+  --color-primary: #005ff9;
+}
+
+html[data-theme="dark"] {
+  --color-header-background: #232324;
+  --elevation-header: 0 0 16px rgba(2, 13, 41, 0.16);
+  --elevation-dropdown: 0 4px 32px rgba(0, 16, 61, 0.32);
+  --color-sidebar-compose-button-background: #ffffff;
+  --color-separator-primary-alpha: rgba(0, 0, 0, 0.4);
+  --color-sidebar-compose-button-text: #333333;
+  --color-background-tertiary: #19191a;
+  --color-background-content: #232324;
+  --color-sidebar-item-text-active: #ffffff;
+  --color-transparent-active: rgba(255, 255, 255, 0.08);
+  --color-transparent-hover: rgba(255, 255, 255, 0.04);
+  --color-sidebar-item-text-primary: #e7e8ea;
+  --color-letter-list-background: #232324;
+  --color-text-primary: #e7e8ea;
+  --color-text-secondary: #8c8e94;
+  --color-text-link: #589bff;
+  --color-icon-accent: #3c82fd;
+  --color-icon-secondary: #9c9da2;
+  --color-scrollbar: rgba(255, 255, 255, 0.12);
+  --color-icon-primary: #d9dadd;
+  --fade-caption: linear-gradient(
+    0deg,
+    rgba(44, 44, 45, 0.9) 45.32%,
+    rgba(44, 44, 45, 0) 104.46%
+  );
+}
+
+html {
+  background: var(--color-background-tertiary);
+}
+
+html[data-theme="dark"] .header-left {
+  fill: #ff9e00;
+}
+
+html[data-theme="dark"] .header-right {
+  fill: #ffffff;
+}
+
+html .header-left {
+  fill: #ff9e00;
+}
+
+html .header-right {
+  fill: #005ff9;
+}
+
+* {
+  scrollbar-color: var(--color-scrollbar) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: none;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar);
+  border-radius: 2px;
+}

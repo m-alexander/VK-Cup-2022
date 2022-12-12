@@ -59,4 +59,4 @@ const requestListener = function (req, res) {
 };
 
 const server = http.createServer(requestListener);
-server.listen(3002);
+server.listen(3000);

@@ -10,31 +10,6 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-}
-
-.logoLink {
-  display: flex;
-}
-
-.backButton {
-  appearance: none;
-  border: none;
-  background: none;
-  padding: 6px 12px;
-  margin: 0;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 20px;
-  color: var(--color-text-primary);
-
-  cursor: pointer;
 }
 
 .progress {
@@ -52,18 +27,4 @@
 
 .progress.loading {
   opacity: 1;
-}
-
-@media screen and (max-width: 768px) {
-  :global(.header-right) {
-    display: none;
-  }
-
-  .backButton {
-    padding: 6px;
-  }
-
-  .backButton span {
-    display: none;
-  }
 }

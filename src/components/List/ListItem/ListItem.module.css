@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.item::after {
+.item:not(:last-child)::after {
   content: "";
   display: block;
   position: absolute;

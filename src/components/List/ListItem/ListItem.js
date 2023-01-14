@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   BookmarkIcon,
   GovernmentIcon,
@@ -12,11 +14,22 @@ import {
 import { Avatar } from "../../Avatar";
 import { Attaches } from "./Attaches";
 import styles from "./ListItem.module.css";
-import { useState } from "react";
 
-// prettier-ignore
-const months = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
-const formatDate = (date) => {
+const months = [
+  "months.january",
+  "months.february",
+  "months.march",
+  "months.april",
+  "months.may",
+  "months.june",
+  "months.july",
+  "months.august",
+  "months.september",
+  "months.october",
+  "months.november",
+  "months.december",
+];
+const formatDate = (date, t) => {
   const d = new Date(date);
 
   const today = new Date().toISOString().slice(0, 10);
@@ -28,7 +41,7 @@ const formatDate = (date) => {
     );
   }
 
-  return d.getDate() + " " + months[d.getMonth()];
+  return d.getDate() + " " + t(months[d.getMonth()]);
 };
 
 const icons = new Map([
@@ -41,6 +54,8 @@ const icons = new Map([
 ]);
 
 export const ListItem = ({ item }) => {
+  const { t } = useTranslation();
+
   const TagIcon = icons.get(item.flag);
 
   const [checked, setChecked] = useState(false);
@@ -99,7 +114,7 @@ export const ListItem = ({ item }) => {
         {item.doc && <Attaches items={[item.doc]} />}
       </div>
 
-      <div className={styles.itemDate}>{formatDate(item.date)}</div>
+      <div className={styles.itemDate}>{formatDate(item.date, t)}</div>
     </Link>
   );
 };

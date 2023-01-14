@@ -1,18 +1,18 @@
 .root {
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
 
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
-  background: var(--color-background-tertiary);
   word-break: break-word;
+
+  transition: transform 0.1s ease 0s;
 }
 
-.root * {
-  box-sizing: border-box;
+.root.scaled {
+  transform: scale(0.8);
 }
 
 .main {

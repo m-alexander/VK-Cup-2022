@@ -19,6 +19,7 @@
   height: 24px;
   border-radius: 8px;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .button.opened {

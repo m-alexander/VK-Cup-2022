@@ -14,6 +14,10 @@ export const router = createBrowserRouter([
         element: <Navigate replace to="/inbox" />,
       },
       {
+        path: "/index.html",
+        element: <Navigate replace to="/inbox" />,
+      },
+      {
         path: "/:folder",
         element: <List />,
         loader: ({ params }) => getLetters(params.folder),

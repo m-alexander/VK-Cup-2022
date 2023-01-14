@@ -1,0 +1,80 @@
+.filterButton {
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  margin: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-header);
+  white-space: nowrap;
+}
+
+.filterButton:hover {
+  background: var(--color-transparent-hover);
+}
+
+.filterItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 240px;
+
+  margin: 0;
+  padding: 8px 0;
+  background: var(--color-background-modal);
+  box-shadow: 0 4px 32px rgba(0, 16, 61, 0.16);
+  border-radius: 12px;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.filterItem {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  padding: 10px 4px;
+}
+
+.filterItem:hover {
+  background: var(--color-transparent-hover);
+}
+
+.notChecked {
+  width: 16px;
+  height: 16px;
+}
+
+.filterItemIcon {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.filterDivider {
+  margin: 8px 0;
+  height: 1px;
+  width: 100%;
+  background: var(--color-separator-primary);
+}

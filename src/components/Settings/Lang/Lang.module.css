@@ -1,0 +1,69 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.submit {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+
+  margin-top: 16px;
+
+  padding: 8px 20px;
+  background: var(--color-background-accent);
+  color: var(--color-text-contrast);
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.item {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--color-true-white);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  border-radius: 50%;
+}
+
+.input:checked {
+  box-shadow: inset 0 0 0 1px var(--color-border),
+    inset 0 0 0 5px var(--color-primary), 0 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+.flag {
+  width: 15px;
+  height: 12px;
+}

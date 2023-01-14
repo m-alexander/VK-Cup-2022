@@ -1,0 +1,68 @@
+{
+  "header": {
+    "back": "Вернуться"
+  },
+  "filters": {
+    "filter": "Фильтр",
+    "filters": "Фильтры",
+    "unread": "Непрочитанные",
+    "bookmark": "С флажком",
+    "attaches": "С вложениями",
+    "allLetters": "Все письма",
+    "reset": "Сбросить всё"
+  },
+  "months": {
+    "january": "янв",
+    "february": "фев",
+    "march": "мар",
+    "april": "апр",
+    "may": "май",
+    "june": "июн",
+    "july": "июл",
+    "august": "авг",
+    "september": "сен",
+    "october": "окт",
+    "november": "ноя",
+    "december": "дек"
+  },
+  "dates": {
+    "today": "Сегодня"
+  },
+  "list": {
+    "noLetters": "Писем нет"
+  },
+  "letter": {
+    "notFound": "Не найдено",
+    "download": "Скачать",
+    "file": "файл",
+    "you": "Вы",
+    "more": "еще",
+    "receivers": "получателей",
+    "to": "Кому"
+  },
+  "sidebar": {
+    "newLetter": "Написать письмо",
+    "settings": "Настройки",
+    "newFolder": "Новая папка",
+    "inbox": "Входящие",
+    "important": "Важное",
+    "sent": "Отправленные",
+    "drafts": "Черновики",
+    "archive": "Архив",
+    "spam": "Спам",
+    "trash": "Корзина"
+  },
+  "settings": {
+    "tabs": {
+      "appearance": "Внешний вид",
+      "language": "Язык"
+    },
+    "appearance": {
+      "header": "Настройки внешнего вида вашей почты и темы оформления"
+    },
+    "lang": {
+      "header": "Изменить язык",
+      "chooseLang": "Выбрать язык"
+    }
+  }
+}

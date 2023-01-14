@@ -1,0 +1,60 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  animation: slideUp 0.1s;
+
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+
+  height: 50vh;
+  width: 100%;
+
+  background: var(--color-background-modal);
+  box-shadow: 0 -3px 48px rgba(0, 16, 61, 0.28);
+
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.tabContent {
+  border-left: 1px solid var(--color-separator-primary);
+  padding: 26px 32px;
+  overflow: auto;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  padding: 4px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 0;
+}
+
+.closeIcon:hover {
+  border-radius: 4px;
+  background: var(--color-transparent-hover);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(0, 100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}

@@ -20,9 +20,45 @@
   overflow: auto;
 }
 
+.settings {
+  appearance: none;
+  cursor: pointer;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 10px;
+
+  width: 100%;
+
+  background: none;
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-sidebar-item-text-primary);
+}
+
+.settings:hover {
+  background: var(--color-transparent-hover);
+}
+
 @media screen and (max-width: 768px) {
   .sidebar {
     --sidebar-width: 60px;
     padding: 12px;
+  }
+
+  .settings {
+    padding: 8px;
+  }
+
+  .settings span {
+    display: none;
   }
 }

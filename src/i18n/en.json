@@ -1,0 +1,68 @@
+{
+  "header": {
+    "back": "Back"
+  },
+  "filters": {
+    "filter": "Filter",
+    "filters": "Filters",
+    "unread": "Unread",
+    "bookmark": "With flag",
+    "attaches": "With attach",
+    "allLetters": "All letters",
+    "reset": "Reset"
+  },
+  "months": {
+    "january": "jan",
+    "february": "feb",
+    "march": "mar",
+    "april": "apr",
+    "may": "may",
+    "june": "jun",
+    "july": "jul",
+    "august": "aug",
+    "september": "sep",
+    "october": "oct",
+    "november": "nov",
+    "december": "dec"
+  },
+  "dates": {
+    "today": "Today"
+  },
+  "list": {
+    "noLetters": "No letters"
+  },
+  "letter": {
+    "notFound": "Not found",
+    "download": "Download",
+    "file": "file",
+    "you": "you",
+    "more": "more",
+    "receivers": "receivers",
+    "to": "To"
+  },
+  "sidebar": {
+    "newLetter": "Compose",
+    "settings": "Settings",
+    "newFolder": "New folder",
+    "inbox": "Inbox",
+    "important": "Important",
+    "sent": "Sent",
+    "drafts": "Drafts",
+    "archive": "Archive",
+    "spam": "Spam",
+    "trash": "Trash"
+  },
+  "settings": {
+    "tabs": {
+      "appearance": "Appearance",
+      "language": "Language"
+    },
+    "appearance": {
+      "header": "Customize the appearance and design theme of your email"
+    },
+    "lang": {
+      "header": "Switch Language",
+      "chooseLang": "Switch"
+    }
+  }
+}

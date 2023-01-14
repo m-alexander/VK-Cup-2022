@@ -15,6 +15,7 @@
   border: 1px solid var(--color-separator-primary-alpha);
   border-radius: 8px;
 
+  font-family: inherit;
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;

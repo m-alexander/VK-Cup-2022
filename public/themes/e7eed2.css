@@ -1,0 +1,37 @@
+:root {
+  --elevation-dropdown: 0 4px 32px rgba(0, 16, 61, 0.24);
+  --color-sidebar-compose-button-background: #ffffff;
+  --color-separator-primary: #dadce0;
+  --color-separator-primary-alpha: rgba(0, 16, 61, 0.12);
+  --color-sidebar-compose-button-text: #333333;
+  --color-background-tertiary: #f6f7f8;
+  --color-background-content: #ffffff;
+  --color-background-modal: #ffffff;
+  --color-background-accent: #005ff9;
+  --color-sidebar-item-text-active: #333333;
+  --color-transparent-active: rgba(0, 16, 61, 0.08);
+  --color-transparent-hover: rgba(0, 16, 61, 0.04);
+  --color-sidebar-item-text-primary: #333333;
+  --color-letter-list-background: #ffffff;
+  --color-text-primary: #2c2d2e;
+  --color-text-secondary: #87898f;
+  --color-text-link: #005bd1;
+  --color-text-contrast: #ffffff;
+  --color-icon-accent: #005ff9;
+  --color-icon-secondary: #a5a7ad;
+  --color-scrollbar: rgba(0, 16, 61, 0.08);
+  --color-icon-primary: #2c2d2e;
+  --fade-caption: linear-gradient(
+    0deg,
+    rgba(236, 237, 240, 0.95) 56.81%,
+    rgba(236, 237, 240, 0) 104.46%
+  );
+
+  --color-page-background: #e7eed2;
+  --color-header-background: #747a63;
+
+  --color-text-header: #e7e8ea;
+  --color-logo-left: #ff9e00;
+  --color-logo-right: #ffffff;
+  --elevation-header: 0 0 16px rgba(2, 13, 41, 0.16);
+}

@@ -1,5 +1,4 @@
-const BASE_PATH =
-  process.env.NODE_ENV === "development" ? "http://localhost:3000/api" : "/api";
+const BASE_PATH = "/api";
 
 export const getLetters = async (folder) => {
   try {

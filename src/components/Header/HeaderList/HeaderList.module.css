@@ -1,0 +1,24 @@
+.logoLink {
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoLeft {
+  fill: var(--color-logo-left);
+}
+
+.logoRight {
+  fill: var(--color-logo-right);
+}
+
+@media screen and (max-width: 768px) {
+  .logoRight {
+    display: none;
+  }
+}

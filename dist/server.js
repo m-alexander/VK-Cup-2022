@@ -101,7 +101,7 @@ const sendImage = (res, img) => {
   res.writeHead(200, {
     "Content-Type": "image/" + img.type,
     "Cache-Control": "max-age=31536000",
-    Vary: 'ETag, Content-Encoding'
+    Vary: "ETag, Content-Encoding",
   });
   res.end(img.content);
 };

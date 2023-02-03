@@ -11,8 +11,16 @@
   color: #333333;
   background: var(--color-true-white);
   flex: 1;
+  overflow: auto;
+  position: relative;
 }
 
 .wrapper :global(.ck-content) {
   min-height: 200px;
+}
+
+.wrapper :global(.ck-editor__top) {
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }

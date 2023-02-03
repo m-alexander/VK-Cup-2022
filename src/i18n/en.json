@@ -64,5 +64,18 @@
       "header": "Switch Language",
       "chooseLang": "Switch"
     }
+  },
+  "compose": {
+    "to": "To",
+    "subject": "Subject",
+    "footer": {
+      "send": "Send",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "attaches": {
+      "add": "Attach file"
+    },
+    "dropZoneText": "Attach images to letter"
   }
 }

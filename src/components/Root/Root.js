@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "../Header";
 import { Sidebar } from "../Sidebar";
@@ -15,7 +15,9 @@ export const Root = () => {
       >
         <div className={styles.main}>
           <Sidebar onOpenSettings={() => setSettingsOpened(true)} />
-          <Outlet />
+          <Suspense fallback={<div />}>
+            <Outlet />
+          </Suspense>
         </div>
         <Header />
       </div>

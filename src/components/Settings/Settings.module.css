@@ -8,8 +8,6 @@
   display: flex;
   align-items: flex-end;
 
-  animation: slideUp 0.1s;
-
   z-index: 1;
 }
 
@@ -24,6 +22,8 @@
 
   display: grid;
   grid-template-columns: 260px 1fr;
+
+  animation: slideUp 0.1s;
 }
 
 .tabContent {
@@ -56,5 +56,16 @@
 
   to {
     transform: translate(0, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .tabContent {
+    border-left: none;
+    border-top: 1px solid var(--color-separator-primary);
   }
 }

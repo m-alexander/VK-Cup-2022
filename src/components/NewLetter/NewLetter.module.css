@@ -1,0 +1,35 @@
+.wrapper {
+  padding: 12px 12px 12px 0;
+  flex: 1;
+  height: calc(100vh - 56px);
+  overflow: auto;
+  display: flex;
+}
+
+.content {
+  background: var(--color-background-content);
+  color: var(--color-text-primary);
+  border-radius: 12px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  position: relative;
+}
+
+.dropZone {
+  background: rgba(128, 128, 128, 0.7);
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
+}

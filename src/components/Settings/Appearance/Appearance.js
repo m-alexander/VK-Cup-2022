@@ -44,7 +44,7 @@ export const Appearance = () => {
     <div className={styles.wrapper}>
       <div className={styles.header}>{t("settings.appearance.header")}</div>
 
-      <div>
+      <div className={styles.selectors}>
         <div className={styles.colors}>
           {colors.map((item) => (
             <div

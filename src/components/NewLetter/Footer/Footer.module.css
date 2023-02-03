@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 8px 16px;
+  border-top: solid 1px var(--color-border);
+}
+
+.button {
+  appearance: none;
+  border: none;
+  padding: 8px 16px;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.primary {
+  background: var(--color-background-accent);
+  color: var(--color-true-white);
+}
+
+.secondary {
+  background: var(--color-background-secondary-alpha);
+  color: var(--color-text-primary);
+}

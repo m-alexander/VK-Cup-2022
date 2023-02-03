@@ -5,7 +5,7 @@ import { DownloadIcon } from "../../Icons";
 export const Attaches = ({ attaches }) => {
   const { t } = useTranslation();
 
-  if (!attaches) return null;
+  if (!attaches?.img) return null;
 
   return (
     <div className={styles.wrapper}>

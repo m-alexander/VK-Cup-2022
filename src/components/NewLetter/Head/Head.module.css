@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: solid 1px var(--color-border);
+}
+
+.avatarAndInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+  width: 100%;
+}
+
+.avatarWrapper {
+  padding-top: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.infoLine {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 8px;
+  align-items: baseline;
+
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+
+  padding: 8px 0;
+}
+
+.infoLine input {
+  border: none;
+  padding: 4px 8px;
+  outline: none;
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.infoLine:not(:last-child) {
+  border-bottom: solid 1px var(--color-border);
+}

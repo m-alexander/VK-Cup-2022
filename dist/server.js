@@ -1,8 +1,15 @@
+const start = performance.now();
+
 const http = require("node:http");
 const fs = require("node:fs");
 const crypto = require("node:crypto");
 const { pipeline, Readable } = require("node:stream");
 const zlib = require("node:zlib");
+const querystring = require("node:querystring");
+
+const ITEMS_PER_PAGE = 20;
+
+console.log("Loading data...");
 
 const db = require("./db.json");
 
@@ -31,7 +38,9 @@ const addImage = (dataURI) => {
   return { id, type };
 };
 
+// const fields = new Set()
 db.forEach((item) => {
+  // Object.keys(item).forEach(key => fields.add(key))
   if (item.author?.avatar) {
     const img = addImage(item.author.avatar);
     if (img) item.author.avatar = "/images/" + img.id + "." + img.type;
@@ -42,6 +51,7 @@ db.forEach((item) => {
     if (img) item.doc.img = "/images/" + img.id + "." + img.type;
   }
 });
+// console.log(Array.from(fields))
 
 const grouped = db.reduce((acc, item) => {
   const folder = folders.get(item.folder) ?? "inbox";
@@ -88,9 +98,20 @@ const sendFile = (res, name, acceptEncoding) => {
 };
 
 const sendImage = (res, img) => {
-  res.writeHead(200, { "Content-Type": "image/" + img.type });
+  res.writeHead(200, {
+    "Content-Type": "image/" + img.type,
+    "Cache-Control": "max-age=31536000",
+    Vary: 'ETag, Content-Encoding'
+  });
   res.end(img.content);
 };
+
+const getTextFromHtml = (text) =>
+  text
+    ?.split(">")
+    ?.map((i) => i.split("<")[0])
+    .filter((i) => !i.includes("=") && i.trim())
+    .join("");
 
 const requestListener = function (req, res) {
   let acceptEncoding = req.headers["accept-encoding"];
@@ -98,15 +119,45 @@ const requestListener = function (req, res) {
     acceptEncoding = "";
   }
 
-  if (req.url.startsWith("/images")) {
-    const [, , id] = req.url.split("/");
-    const name = String(id).slice(0, -4);
+  let [url, query] = req.url.split("?");
+  query = query ? querystring.parse(query) : {};
+
+  if (url.startsWith("/upload-image")) {
+    const buffers = [];
+    req.on("data", (chunk) => buffers.push(chunk));
+    req.on("end", () => {
+      const content = Buffer.concat(buffers).toString();
+      const { id, type } = addImage(content);
+      const url = `/images/${id}.${type}`;
+      return sendJson(res, { url }, acceptEncoding);
+    });
+
+    return;
+  }
+
+  if (url.startsWith("/api/add-letter")) {
+    const buffers = [];
+    req.on("data", (chunk) => buffers.push(chunk));
+    req.on("end", () => {
+      const item = JSON.parse(Buffer.concat(buffers).toString());
+      item.id = crypto.randomUUID();
+      const folder = folders.get(item.folder) ?? "inbox";
+      grouped[folder].unshift(item);
+      return sendJson(res, { success: true }, acceptEncoding);
+    });
+
+    return;
+  }
+
+  if (url.startsWith("/images")) {
+    const [, , id] = url.split("/");
+    const name = String(id).replace(/(\..+)$/, "");
     const img = images.get(name);
     if (img) return sendImage(res, img);
   }
 
-  if (req.url.startsWith("/api")) {
-    const [, , folder, letter] = req.url.split("/");
+  if (url.startsWith("/api")) {
+    const [, , folder, letter] = url.split("/");
     const items = grouped[folder] ?? [];
 
     if (letter) {
@@ -114,7 +165,42 @@ const requestListener = function (req, res) {
       return sendJson(res, item, acceptEncoding);
     }
 
-    return sendJson(res, items, acceptEncoding);
+    const filters = query.filters;
+    let filteredItems = items;
+    if (filters) {
+      const filtersFunction = (() => {
+        const fns = [];
+        if (filters.includes("unread")) fns.push((letter) => !letter.read);
+        if (filters.includes("bookmark")) fns.push((letter) => letter.bookmark);
+        if (filters.includes("attaches")) fns.push((letter) => letter.doc);
+
+        if (fns.length === 0) return () => true;
+        return (letter) => fns.every((fn) => fn(letter));
+      })();
+      filteredItems = filteredItems.filter(filtersFunction);
+    }
+    let page = Number(query.page);
+    page = Number.isNaN(page) ? 1 : Math.max(1, page);
+    const offset = ITEMS_PER_PAGE * (page - 1);
+    let responseItems = filteredItems.slice(offset, offset + ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+    const pageInfo = {
+      hasNextPage: page < totalPages,
+      hasPreviousPage: page > 1,
+      page,
+      perPage: ITEMS_PER_PAGE,
+      totalItems: filteredItems.length,
+      totalPages,
+    };
+    responseItems = responseItems.map((item) => {
+      return {
+        ...item,
+        text: getTextFromHtml(item.text).slice(0, 150),
+      };
+    });
+    const response = { items: responseItems, pageInfo };
+
+    return sendJson(res, response, acceptEncoding);
   }
 
   const filename = "." + req.url;
@@ -125,5 +211,13 @@ const requestListener = function (req, res) {
   return sendFile(res, "./index.html", acceptEncoding);
 };
 
+console.log("Creating server...");
 const server = http.createServer(requestListener);
-server.listen(3000);
+
+server.listen(3000, () => {
+  console.log(
+    "Server started in",
+    (performance.now() - start) / 1000,
+    "seconds"
+  );
+});

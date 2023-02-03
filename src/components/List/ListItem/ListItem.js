@@ -73,8 +73,17 @@ export const ListItem = ({ item }) => {
     .filter(Boolean)
     .join(" ");
 
+  const showContextMenu = (e) => {
+    console.log(e);
+    // e.preventDefault();
+  };
+
   return (
-    <Link className={itemClassNames} to={item.id}>
+    <Link
+      className={itemClassNames}
+      to={item.id}
+      onContextMenu={showContextMenu}
+    >
       <div className={styles.itemReadStatus}></div>
 
       <div className={styles.itemUser}>

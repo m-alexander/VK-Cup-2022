@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 
-let filters = [];
+const emptyFilters = [];
+let filters = emptyFilters;
 const listeners = new Set();
 
 function emitChange() {
@@ -28,7 +29,7 @@ function toggle(item) {
 }
 
 function reset() {
-  filters = [];
+  filters = emptyFilters;
   emitChange();
 }
 

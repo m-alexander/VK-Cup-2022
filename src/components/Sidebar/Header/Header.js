@@ -5,8 +5,8 @@ import styles from "./Header.module.css";
 export const Header = () => {
   const { t } = useTranslation();
   return (
-    <button type="button" className={styles.newLetterButton}>
+    <a href="/compose" className={styles.newLetterButton}>
       <EditIcon /> <span>{t("sidebar.newLetter")}</span>
-    </button>
+    </a>
   );
 };

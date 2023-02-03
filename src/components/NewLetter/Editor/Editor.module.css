@@ -1,0 +1,18 @@
+.wrapper {
+  --ck-color-toolbar-background: var(--color-background-content);
+  --ck-color-text: var(--color-text-secondary);
+  --ck-color-toolbar-border: transparent;
+  --ck-color-base-border: transparent;
+  --ck-border-radius: 0;
+  --ck-color-base-background: var(--color-true-white);
+  --ck-focus-ring: solid 1px transparent;
+  --ck-inner-shadow: none;
+
+  color: #333333;
+  background: var(--color-true-white);
+  flex: 1;
+}
+
+.wrapper :global(.ck-content) {
+  min-height: 200px;
+}
